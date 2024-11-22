@@ -4,17 +4,17 @@ import matplotlib.pyplot as plt
 # Verdier for motstand og kondensator
 R = 10000  # motstand i ohm (10 kΩ)
 C = 100e-6  # kapasitans i farad (100 μF)
-V = 9  # batterispenning i volt
+V = 9  
 
-# Tidsverdier for teoretisk modell (juster tidsintervallet etter behov)
+
 t_teoretisk = np.linspace(0, 5*R*C, 100)  # fra t=0 til t=5RC
 v_teoretisk = V * (1 - np.exp(-t_teoretisk / (R * C)))
 
-# Målte verdier (sett inn dine egne målinger her)
-t_malt = np.array([0, 1, 2, 3, 4, 5])  # tidspunkter for målinger i sekunder
-v_malt = np.array([0, 1.5, 3.4, 5.1, 6.5, 7.8])  # målt spenning over kondensatoren
 
-# Plotting
+t_malt = np.array([0, 1, 2, 3, 4, 5])  
+v_malt = np.array([0, 1.5, 3.4, 5.1, 6.5, 7.8])  
+
+
 plt.plot(t_teoretisk, v_teoretisk, label='Teoretisk kurve', color='blue')
 plt.scatter(t_malt, v_malt, color='red', label='Målt data')
 plt.xlabel('Tid (s)')
